@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>js框架测试-ajax</title>
+		<meta name="description" content="" />
+		<meta name="author" content="feeloc" />
+
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script type="text/javascript" src="../js/jframe.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn1 = document.getElementById('btn1');
+				btn1.onclick = function() {
+					jframe.ajax('data.json', 'GET', 'json', null, function(res) {
+						alert(res);
+					}, function(status) {
+						alert(status);
+					});
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<input type="button" id="btn1" value="ajax" />
+	</body>
+</html>
