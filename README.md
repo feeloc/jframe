@@ -1,6 +1,10 @@
-原生javascript的学习过程
+javascript
 
-*	1.dom
-*	2.ajax
-*	3.bom
+*   1.基本类型
+    *   number,string,boolean,undefined,object,function
+*   2.数组
+    *
+*	2.dom
+*	3.ajax
 *	4.cookie
+*	5.bom
