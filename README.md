@@ -22,5 +22,3 @@ console.log(a.sort(function(n1,n2){
 *	3.ajax
 *	4.cookie
 *	5.bom
-
-<iframe frameborder="no"  src="http://feeloc.cn"></iframe>
