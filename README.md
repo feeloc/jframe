@@ -8,7 +8,7 @@ javascript
 var a = 'abcdefg';
 a[1]  //结果是b，但不兼容a.charAt(1)
 ```
-*   2.数组Array
+*   3.数组Array
     *   push()：数组尾部添加
     *   pop()：数组尾部删除
     *   shift()：头部删除
@@ -24,7 +24,7 @@ console.log(a.sort(function(n1,n2){
 ```
     *   Array.prototype.push.apply(a,b)：改变a本身
     *   Math.prototype.max.apply(null,a)：a中最大值
-*	2.dom
-*	3.ajax
-*	4.cookie
-*	5.bom
+*	4.dom
+*	5.ajax
+*	6.cookie
+*	7.bom
