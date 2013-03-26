@@ -2,6 +2,11 @@ javascript
 
 *   1.基本类型
     *   number,string,boolean,undefined,object,function
+*   2.string
+```
+var a = 'abcdefg';
+a[1]  //结果是b，但不兼容a.charAt(1)
+```
 *   2.数组Array
     *   push()：数组尾部添加
     *   pop()：数组尾部删除
@@ -10,7 +15,7 @@ javascript
     *   splice()：删除，添加，替换
     *   contact()：数组拼接，不改变数据本身
     *   sort()：数据排序，数字按字符串排序，利用比较函数排序数字
-```javascript
+```
 var a = [1,3,3,4,6,21,7];
 console.log(a.sort(function(n1,n2){
     return n1-n2;
