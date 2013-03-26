@@ -1,4 +1,5 @@
-===javascript
+javascript
+=====
 
 *   1.基本类型
     *   number,string,boolean,undefined,object,function
