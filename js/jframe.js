@@ -1,5 +1,30 @@
 var jframe = {
     /**
+     * 传obj,name获取样式
+     * 传obj.name,value设置样式
+     * 不能获取background之类的复合样式
+     * @param obj   操作样式的元素
+     * @param name  操作的CSS
+     * @param value 设置CSS的值
+     * @return {*}
+     */
+    css: function (obj, name, value) {
+        if (arguments.length == 2) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[name];
+            } else {
+                return getComputedStyle(obj, false)[name];
+            }
+        } else {
+            if (name == 'opacity') {
+                if (obj.currentStyle) {
+                    obj.style['filter'] = 'alpha(opacity:' + value * 100 + ')';
+                }
+            }
+            obj.style[name] = value;
+        }
+    },
+    /**
      * 事件绑定
      * IE是attachEvent
      * DOM是addEventListener

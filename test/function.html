@@ -19,6 +19,13 @@
             return Math.max.apply(null, array);
         }
         console.log(maxArray([2, 3, 1, 22, 5, 34]));
+        function concateArray(arr1, arr2) {
+            Array.prototype.push.apply(arr1, arr2);
+        }
+        var arr1 = [1, 2, 3];
+        var arr2 = [4, 5, 6];
+        concateArray(arr1, arr2);
+        console.log(arr1);
     </script>
 </head>
 
