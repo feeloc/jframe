@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>js框架测试-事件</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="feeloc"/>
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <script type="text/javascript" src="../js/jframe.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+
+            var fn = function () {
+                jframe.addEvent(btn2, 'click', fn1);
+                jframe.addEvent(btn2, 'click', fn2);
+            };
+            var fn1 = function () {
+                alert(1);
+            };
+            var fn2 = function () {
+                alert(1);
+            };
+            jframe.addEvent(btn1, 'click', fn);
+            jframe.addEvent(btn3, 'click', function () {
+                jframe.removeEvent(btn2, 'click', fn1);
+                jframe.removeEvent(btn2, 'click', fn2);
+            });
+        };
+    </script>
+</head>
+
+<body>
+<input type="button" id="btn1" value="绑定事件"/>
+<input type="button" id="btn2" value="事件展示"/>
+<input type="button" id="btn3" value="解除绑定"/>
+</body>
+</html>

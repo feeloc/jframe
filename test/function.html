@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>经典方法</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="feeloc"/>
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <script type="text/javascript">
+        /**
+         * 获取数组中的最大值
+         * @param array
+         * @return {Number}
+         */
+        function maxArray(array) {
+            return Math.max.apply(null, array);
+        }
+        console.log(maxArray([2, 3, 1, 22, 5, 34]));
+        function concateArray(arr1, arr2) {
+            Array.prototype.push.apply(arr1, arr2);
+        }
+        var arr1 = [1, 2, 3];
+        var arr2 = [4, 5, 10, 6];
+        concateArray(arr1, arr2);
+        console.log(arr1);
+
+        arr2.sort(function(n1,n2){
+            return n1-n2;
+        });
+        console.log(arr2.sort(function(n1,n2){
+            return n1-n2;
+        }));
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

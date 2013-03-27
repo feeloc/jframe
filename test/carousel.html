@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>图片无缝滚动</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="feeloc"/>
+    <link type="text/css" rel="stylesheet" href="../css/base.css">
+    <style type="text/css">
+        .jcarousel-btn {
+            float: left;
+        }
+
+        .jcarousel-box {
+            float: left;
+            overflow: hidden;
+        }
+
+        .jcarousel-box ul li {
+            float: left;
+            list-style: none;
+            padding: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oCarouselBox = document.getElementById('jcarousel'),
+                oCarouselUl = oCarouselBox.getElementsByTagName('ul')[0],
+                liWidth = oCarouselUl.getElementsByTagName('li')[0].offsetWidth,
+                liHeight = oCarouselUl.getElementsByTagName('li')[0].offsetHeight,
+                leftBtn = document.getElementById('goLeft'),
+                rightBtn = document.getElementById('goRight'),
+                speed = 2,  //速度
+                timer,  //定时器
+                position = -1;   //1为向左，-1为向右
+
+            oCarouselUl.innerHTML += oCarouselUl.innerHTML;
+            oCarouselBox.style.width = liWidth * 5 + 'px';
+            oCarouselUl.style.width = liWidth * 5 * 2 + 'px';
+
+            /**
+             * 跑马灯主体函数
+             */
+            var carousel = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    var iMarginLeft = oCarouselUl.style.marginLeft||'0px';
+                    oCarouselUl.style.marginLeft = parseFloat(iMarginLeft.split('px')[0]) - position * speed + 'px';
+                    //向左到一半时
+                    if (oCarouselUl.style.marginLeft.split('px')[0] < -liWidth * 5) {
+                        oCarouselUl.style.marginLeft = 0;
+                    }
+                    //到最右边时
+                    if (oCarouselUl.style.marginLeft.split('px')[0] > 0) {
+                        oCarouselUl.style.marginLeft = -liWidth * 5 + 'px';
+                    }
+                }, 30);
+            };
+
+            carousel();
+
+            oCarouselBox.onmouseover = function () {
+                clearInterval(timer);
+            };
+
+            oCarouselBox.onmouseout = function () {
+                carousel();
+            };
+
+            leftBtn.onclick = function () {
+                position = 1;   //状态改成向左
+                carousel();
+            };
+
+            rightBtn.onclick = function () {
+                position = -1;  //状态改成向右
+                carousel();
+            };
+        };
+    </script>
+</head>
+
+<body>
+<div class="content clearfix">
+    <a href="javascript:void(0);" class="jcarousel-btn" id="goLeft">向左</a>
+
+    <div class="jcarousel-box" id="jcarousel">
+        <ul class="clearfix">
+            <li><img width="150px" src="../images/carousel1.jpg"/></li>
+            <li><img width="150px" src="../images/carousel2.jpg"/></li>
+            <li><img width="150px" src="../images/carousel3.jpg"/></li>
+            <li><img width="150px" src="../images/carousel4.jpg"/></li>
+            <li><img width="150px" src="../images/carousel5.jpg"/></li>
+        </ul>
+    </div>
+    <a href="javascript:void(0);" class="jcarousel-btn" id="goRight">向右</a>
+</div>
+</body>
+</html>
