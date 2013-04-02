@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>js框架测试-dom操作</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="feeloc"/>
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <style type="text/css">
+        .bcd {
+            color: #F00;
+        }
+
+        .abc {
+            color: #00F;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jframe.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oUl = document.getElementsByTagName('ul')[0];
+            var oLi = document.getElementById('li');
+//                alert(oLi.parentNode.tagName);
+//                alert(oLi.offsetParent.tagName);
+//                alert(oUl.firstChild.tagName);
+//                alert(oUl.firstElementChild.tagName);
+//                alert(jframe.getFirstChild(oUl).tagName);
+//                oLi.setAttribute('class','bcd');
+//                oLi.className = 'bcd';
+//                oLi['class'] = 'abc';
+            var oLis = jframe.getElementsByClass(oUl, 'li');
+            for (var i = 0; i < oLis.length; i++) {
+                alert(oLis[i].innerHTML);
+            }
+        };
+    </script>
+</head>
+
+<body>
+<ul>
+    <li id="li" class="li">你好</li>
+    <li class=" li ">你不好</li>
+    <li class="li a">1</li>
+    <li class="b li">2</li>
+</ul>
+</body>
+</html>

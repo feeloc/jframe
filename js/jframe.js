@@ -87,5 +87,33 @@ var jframe = {
                 }
             }
         }
+    },
+    /**
+     *  获取元素的第一个子元素
+     * @param target
+     * @return {*}
+     */
+    getFirstChild: function (oParent) {
+        if (oParent.firstElementChild) {
+            return oParent.firstElementChild;
+        } else {
+            return oParent.firstChild;
+        }
+    },
+    /**
+     * 根据class获取元素
+     * @param oParent
+     * @param sClassName
+     * @return {Array}
+     */
+    getElementsByClass: function (oParent, sClassName) {
+        var aElements = [];
+        var oElements = oParent.getElementsByTagName('*');
+        for (var i = 0; i < oElements.length; i++) {
+            if (oElements[i].className.match(new RegExp("(^| )" + sClassName + "( |$)"))) {
+                aElements.push(oElements[i]);
+            }
+        }
+        return aElements;
     }
 };
