@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>拖动</title>
+    <style>
+        #div1 {
+            position: absolute;
+            background: #F00;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var doc = document;
+            var oDiv = doc.getElementById('div1');
+
+            oDiv.onmousedown = function (ev) {
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oDiv.offsetLeft;
+                var disY = oEvent.clientY - oDiv.offsetTop;
+
+                doc.onmousemove = function (ev) {
+                    var oEvent = ev || event;
+                    var offsetLeft = oEvent.clientX - disX;
+                    var offsetTop = oEvent.clientY - disY;
+                    var clientWidth = document.documentElement.clientWidth;
+                    var clientHeight = document.documentElement.clientHeight;
+
+                    if (offsetLeft < 0) {
+                        oDiv.style.left = 0 + 'px';
+                    } else if (offsetLeft > clientWidth - oDiv.offsetWidth) {
+                        oDiv.style.left = clientWidth - oDiv.offsetWidth + 'px';
+                    } else if (offsetTop < 0) {
+                        oDiv.style.top = 0 + 'px';
+                    } else if (offsetTop > clientHeight - oDiv.offsetHeight) {
+                        oDiv.style.top = clientHeight - oDiv.offsetHeight + 'px';
+                    } else {
+                        oDiv.style.left = offsetLeft + 'px';
+                        oDiv.style.top = offsetTop + 'px';
+                    }
+                };
+
+                doc.onmouseup = function () {
+                    doc.onmousemove = null;
+                    doc.onmouseup = null;
+                };
+            };
+        };
+    </script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>
