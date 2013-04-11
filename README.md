@@ -31,6 +31,7 @@ console.log(a.sort(function(n1,n2){
     *   相对定位的父节点    a.offsetParent会将文本节点当成其中一个节点
     *   第一个子节点  a.firstChild有兼容问题，使用firstElementChild低版本浏览器不适用使用if判断
     *   修改dom属性 一般使用a['id'] = 'abc'，但如果是创建属性就不会绑定到元素上，可以用setAttribute
+    *
 *	5.ajax
 *	6.cookie
 *	7.bom
