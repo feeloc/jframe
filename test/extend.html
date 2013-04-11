@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>继承</title>
+    <script type="text/javascript">
+        var Animal = function (name) {
+            this.name = name;
+        };
+        Animal.prototype.call = function () {
+            alert(this.name);
+        };
+        var Dog = function (name) {
+            Animal.call(this, name);
+        };
+        for (var i in Animal.prototype) {
+            Dog.prototype[i] = Animal.prototype[i];
+        }
+        var dog = new Dog('小明');
+        dog.call();
+
+        var Cat = function(name){
+            Animal.apply(this,[name]);
+        };
+        Cat.prototype = new Animal();
+        var cat = new Cat('小白');
+
+        cat.call();
+//
+//        function Parent(username) {
+//            this.username = username;
+//            this.hello = function () {
+//                alert(this.username);
+//            }
+//        }
+//        function Child(username, password) {
+//            Parent.call(this, username);
+//
+//            this.password = password;
+//            this.world = function () {
+//                alert(this.password);
+//            }
+//        }
+//        var parent = new Parent("zhangsan");
+//        var child = new Child("lisi", "123456");
+//        parent.hello();
+//        child.hello();
+//        child.world();
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
