@@ -16,6 +16,7 @@ $(function () {
 
         this.setName = function(){
             var _this = this;
+
             for (var state in this.china) {
                 //分省区域着色
                 this.china[state]['path'].color = Raphael.getColor(0.9);
