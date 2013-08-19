@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=zh><HEAD><TITLE>中国分省市地图导航-SVG格式（基于Raphaël）</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="style.css" type=text/css rel=stylesheet>
+<SCRIPT src="jquery.min.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="raphael.js" type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+               	//预留作为初始化打开显示的省份
+		var current = null;
+	</SCRIPT>
+
+<SCRIPT src="chinamap.js" type=text/javascript></SCRIPT>
+
+<STYLE>
+#ChinaMap {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 0px auto; WIDTH: 560px; PADDING-TOP: 10px; POSITION: relative; TEXT-ALIGN: center
+}
+#tiplayer {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; Z-INDEX: 1000; MIN-HEIGHT: 1em; BACKGROUND: #000; MAX-WIDTH: 250px; PADDING-BOTTOM: 5px; FONT: 12px 'Microsoft YaHei',Arial,宋体,Tahoma,Sans-Serif; COLOR: #fff; PADDING-TOP: 5px; POSITION: absolute; TEXT-ALIGN: left; WORD-WRAP: break-word; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px
+}
+#ToolTip {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; Z-INDEX: 1000; MIN-HEIGHT: 1em; BACKGROUND: #000; MAX-WIDTH: 250px; PADDING-BOTTOM: 5px; FONT: 12px 'Microsoft YaHei',Arial,宋体,Tahoma,Sans-Serif; COLOR: #fff; PADDING-TOP: 5px; POSITION: absolute; TEXT-ALIGN: left; WORD-WRAP: break-word; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px
+}
+#ToolTip {
+	BORDER-RIGHT: #c5b270 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #c5b270 1px solid; PADDING-LEFT: 15px; BACKGROUND: #fffbd6; PADDING-BOTTOM: 0px; BORDER-LEFT: #c5b270 1px solid; COLOR: #bb861c; LINE-HEIGHT: 30px; PADDING-TOP: 0px; BORDER-BOTTOM: #c5b270 1px solid; TOP: 30px
+}
+</STYLE>
+
+<META content="MSHTML 6.00.6000.17098" name=GENERATOR></HEAD>
+<BODY class=yui-skin-sam>
+<DIV class=demo id=doc>
+<DIV id=hd>
+<DIV class=page-title>
+<H1>中国分省市地图导航 SVG格式（基于Raphaël）</H1></DIV></DIV>
+<DIV id=bd>
+<DIV class=tell>
+<H2><STRONG>在很多场合会用到，如果让你忘掉flash，下面这地图是你“不二“的选择，^_^.</STRONG></H2>
+<P>SVG地图基于<A href="http://raphaeljs.com/">Raphaël</A> 生成；为了书写方便，使用了<A 
+href="http://jquery.com/">Jquery</A>实现一些动画。</P></DIV>
+<DIV id=ChinaMap>
+<DIV id=ToolTip>地图正在绘制...</DIV></DIV>
+<DIV class=tell>
+<H2><STRONG>Useage</STRONG></H2>
+<P>引入js<BR><TEXTAREA class="codepress html" id=javascript style="HEIGHT: 10em">&lt;script type="text/javascript" src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/raphael.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	//预留作为初始化打开显示的省份
+	var current = null;
+&lt;/script&gt;
+&lt;script type="text/javascript" src="js/chinamap.js"&gt;&lt;/script&gt;
+&lt;!-- chinamap中包含地图数据 --&gt;
+</TEXTAREA> </P><TEXTAREA class="codepress javascript" id=javascript style="HEIGHT: 3em">&lt;!-- 在chinamap.js中修改初始化容器 --&gt;
+&lt;div id="ChinaMap"&gt;&lt;div id="ToolTip"&gt;地图正在绘制...&lt;/div&gt;&lt;/div&gt;	
+</TEXTAREA> </DIV>
+<DIV></DIV>
+<SCRIPT src="codepress.js" type=text/javascript></SCRIPT>
+</BODY></HTML>
